@@ -1,0 +1,192 @@
+@font-face {
+  font-family: budmo_jiggler;
+  src: url("../fonts/budmo_jiggler-webfont.woff") format("woff"), url("../fonts/budmo_jiggler-webfont.woff2") format("woff2"); }
+
+/* line 7, src/styles/_typography.scss */
+h2, h4, h3 {
+  font-family: 'Cinzel', serif; }
+
+@keyframes magshitShake {
+  0% {
+    top: 2px; }
+  10% {
+    top: 0;
+    left: 2px; }
+  15% {
+    right: 2px;
+    bottom: 2px; }
+  20% {
+    left: 0;
+    bottom: 1px;
+    right: 4px; }
+  30% {
+    right: 0;
+    bottom: 3px; }
+  40% {
+    bottom: 0;
+    left: 4px; }
+  50% {
+    left: 0;
+    top: 5px; }
+  60% {
+    top: 0;
+    left: 2px; }
+  70% {
+    left: 0;
+    right: 4px; }
+  75% {
+    top: 3px;
+    left: 3px;
+    right: 0px; }
+  80% {
+    right: 0;
+    top: 5px; }
+  90% {
+    top: 0;
+    bottom: 3px; }
+  100% {
+    bottom: 0;
+    right: 2px; } }
+
+@keyframes magshitPulse {
+  0% {
+    box-shadow: 2px 2px 10px 5px #EAEAEA; }
+  20% {
+    box-shadow: 2px 2px 20px 25px #E0DBE1; }
+  40% {
+    box-shadow: 2px 2px 30px 40px #CCBDD0; }
+  60% {
+    box-shadow: 2px 2px 35px 50px #C3AFC7; }
+  80% {
+    box-shadow: 2px 2px 40px 65px #B9A0BF; }
+  100% {
+    box-shadow: 2px 2px 50px 80px #AF91B6; } }
+
+@keyframes magshitEnd {
+  0% {
+    box-shadow: 2px 2px 50px 80px #AF91B6; }
+  100% {
+    box-shadow: 2px 2px 50px 1000px #AF91B6; } }
+
+/* line 52, src/styles/index.scss */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+/* line 58, src/styles/index.scss */
+article {
+  width: 100%;
+  height: 100%;
+  min-height: 800px;
+  padding: 0;
+  margin: 0; }
+  @media screen and (max-width: 700px) {
+    /* line 58, src/styles/index.scss */
+    article {
+      min-height: 600px; } }
+
+/* line 67, src/styles/index.scss */
+h2 {
+  opacity: 0;
+  font-size: 84px;
+  margin: 20px 0; }
+  @media screen and (max-width: 700px) {
+    /* line 67, src/styles/index.scss */
+    h2 {
+      font-size: 42px; } }
+
+/* line 74, src/styles/index.scss */
+.first-section-animation {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 100%;
+  height: 100%; }
+  /* line 82, src/styles/index.scss */
+  .first-section-animation .words {
+    text-align: center; }
+    /* line 85, src/styles/index.scss */
+    .first-section-animation .words .show-word-one {
+      opacity: 1;
+      transition: opacity ease-in-out 3.5s; }
+    /* line 89, src/styles/index.scss */
+    .first-section-animation .words .show-word-two {
+      opacity: 1;
+      transition: opacity ease-in-out 5.5s; }
+    /* line 93, src/styles/index.scss */
+    .first-section-animation .words .show-word-three {
+      opacity: 1;
+      transition: opacity ease-in-out 7.5s; }
+    /* line 97, src/styles/index.scss */
+    .first-section-animation .words .reveal {
+      display: none;
+      opacity: 1; }
+    /* line 102, src/styles/index.scss */
+    .first-section-animation .words .stage-one,
+    .first-section-animation .words .stage-two,
+    .first-section-animation .words .stage-three {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+          justify-content: center;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      min-height: 800px;
+      height: 100%;
+      -ms-flex-item-align: center;
+          align-self: center; }
+  /* line 115, src/styles/index.scss */
+  .first-section-animation .magshit {
+    position: relative;
+    font-size: 124px;
+    animation: 325ms linear 0s infinite alternate magshitShake; }
+    @media screen and (max-width: 700px) {
+      /* line 115, src/styles/index.scss */
+      .first-section-animation .magshit {
+        font-size: 62px; } }
+  /* line 122, src/styles/index.scss */
+  .first-section-animation .big-special {
+    display: none;
+    border-radius: 100%;
+    font-size: 200px;
+    opacity: 1;
+    width: 270px;
+    animation: 1750ms linear 0s infinite magshitPulse; }
+    /* line 132, src/styles/index.scss */
+    .first-section-animation .big-special:hover {
+      background-color: #7F488C;
+      opacity: 1;
+      background-image: url(../images/magic_mike_circle.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      animation: 1750ms linear 0s forwards magshitEnd; }
+
+/* line 144, src/styles/index.scss */
+.the-originals-presents {
+  display: none;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 800px; }
+  /* line 153, src/styles/index.scss */
+  .the-originals-presents h2 {
+    opacity: 0;
+    font-family: "budmo_jiggler"; }
+  /* line 158, src/styles/index.scss */
+  .the-originals-presents .active {
+    opacity: 1;
+    transition: opacity ease-in-out 5.5s; }

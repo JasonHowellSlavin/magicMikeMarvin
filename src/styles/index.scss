@@ -1,0 +1,162 @@
+@import '_typography.scss';
+
+@mixin media-query-max ($max-width, $styles-list) {
+    @media screen and (max-width: $max-width) {
+        @each $property, $style in $styles-list {
+            #{$property}: #{$style};
+        }
+    }
+}
+
+@mixin media-query-min ($min-width, $styles-list) {
+    @media screen and (min-width: $min-width) {
+        @each $property, $style in $styles-list {
+            #{$property}: #{$style};
+        }
+    }
+}
+
+$jiggler: 'budmo_jiggler';
+$break-small: 700px;
+
+@keyframes magshitShake {
+    0% {top: 2px;}
+    10% {top: 0; left: 2px;}
+    15% {right: 2px; bottom: 2px;}
+    20% {left: 0; bottom: 1px; right: 4px;}
+    30% {right: 0; bottom: 3px;}
+    40% {bottom: 0; left: 4px;}
+    50% {left: 0; top: 5px}
+    60% {top: 0; left: 2px;}
+    70% {left: 0; right: 4px;}
+    75% {top: 3px; left: 3px; right: 0px;}
+    80% {right: 0; top: 5px;}
+    90% {top: 0; bottom: 3px;}
+    100% {bottom: 0; right: 2px;}
+}
+
+@keyframes magshitPulse {
+    0% {box-shadow: 2px 2px 10px 5px #EAEAEA;}
+    20% {box-shadow: 2px 2px 20px 25px #E0DBE1;}
+    40% {box-shadow: 2px 2px 30px 40px #CCBDD0;}
+    60% {box-shadow: 2px 2px 35px 50px #C3AFC7;}
+    80% {box-shadow: 2px 2px 40px 65px #B9A0BF;}
+    100% {box-shadow: 2px 2px 50px 80px #AF91B6;}
+}
+
+@keyframes magshitEnd {
+    0% {box-shadow: 2px 2px 50px 80px #AF91B6;}
+    100% {box-shadow: 2px 2px 50px 1000px #AF91B6;}
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+article {
+    @include media-query-max($break-small, ((min-height, 600px), ));
+    width: 100%;
+    height: 100%;
+    min-height: 800px;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    @include media-query-max($break-small, ((font-size, 42px), ));
+    opacity: 0;
+    font-size: 84px;
+    margin: 20px 0;
+}
+
+.first-section-animation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    .words {
+        text-align: center;
+
+        .show-word-one {
+            opacity: 1;
+            transition: opacity ease-in-out 3.5s;
+        }
+        .show-word-two {
+            opacity: 1;
+            transition: opacity ease-in-out 5.5s;
+        }
+        .show-word-three {
+            opacity: 1;
+            transition: opacity ease-in-out 7.5s;
+        }
+        .reveal {
+            display: none;
+            opacity: 1;
+        }
+
+        .stage-one,
+        .stage-two,
+        .stage-three {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 800px;
+            height: 100%;
+            align-self: center;
+        }
+    }
+
+    .magshit {
+        @include media-query-max($break-small, ((font-size, 62px), ));
+        position: relative;
+        font-size: 124px;
+        animation: 325ms linear 0s infinite alternate magshitShake;
+    }
+
+    .big-special {
+        display: none;
+        border-radius: 100%;
+        font-size: 200px;
+        opacity: 1;
+        width: 270px;
+        //box-shadow: 2px 2px 80px 45px #EAEAEA;
+        animation: 1750ms linear 0s infinite magshitPulse;
+
+
+        &:hover {
+            background-color: #7F488C;
+            opacity: 1;
+            background-image: url(../images/magic_mike_circle.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: 1750ms linear 0s forwards magshitEnd;
+        }
+    }
+}
+
+.the-originals-presents {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 800px;
+
+    h2 {
+        opacity: 0;
+        font-family: $jiggler;
+    }
+
+    .active {
+        opacity: 1;
+        transition: opacity ease-in-out 5.5s;
+    }
+}

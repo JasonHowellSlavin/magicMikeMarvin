@@ -1,0 +1,38 @@
+{
+  "name": "magicMikeMarvin",
+  "version": "1.0.0",
+  "description": "One page promotional site for my friend's character he brings out at parties.",
+  "main": "index.php",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-coffee": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest",
+    "gulp-sass": "latest",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest",
+    "jquery": "^3.3.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SenatorCrabHat/magicMikeMarvin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SenatorCrabHat/magicMikeMarvin/issues"
+  },
+  "homepage": "https://github.com/SenatorCrabHat/magicMikeMarvin#readme"
+}
